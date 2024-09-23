@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Boekingsformulier - TUI</title>
+</head>
+<body>
+    <h1>Boek je reis bij TUI</h1>
+
+    <form action="submit_boeking.php" method="post">
+        <!-- Voornaam -->
+        <label for="fname">Voornaam:</label>      <br>
+        <input type="text" id="fname" name="fname" placeholder="Typ je voornaam" pattern="[A-Za-z]+" title="Geen cijfers toegestaan" required><br><br>
+        <!-- Achternaam -->
+        <label for="lname">Achternaam:</label><br>
+        <input type="text" id="lname" name="lname" placeholder="Typ je achternaam" pattern="[A-Za-z]+" title="Geen cijfers toegestaan" required><br><br>
+
+        <!-- Geslacht -->
+         <label>Geslacht:</label><br>
+        <input type="radio" id="male" name="gender" value="man" checked> 
+         <label for="male">Man</label><br>
+        <input type="radio" id="female" name="gender" value="vrouw"> 
+        <label for="female">Vrouw</label><br><br>
+
+        <!-- Straat en huisnummer -->
+        <label for="street">Straat en huisnummer:</label><br>
+        <input type="text" id="street" name="street" placeholder="Straatnaam en huisnummer" required><br><br>
+
+        <!-- Postcode -->
+        <label for="postcode">Postcode:</label><br>
+        <input type="text" id="postcode" name="postcode" placeholder="1234 AB" pattern="[0-9]{4}[A-Za-z]{2}" title="Gebruik een geldige postcode, bijvoorbeeld: 1234 AB" required><br><br>
+
+        <!-- Stad -->
+        <label for="city">Stad:</label><br>
+         <input type="text" id="city" name="city" placeholder="Typ je stad" required><br><br>
+
+        <!-- Land -->
+        <label for="country">Land:</label><br>
+           <input type="text" id="country" name="country" placeholder="Typ je land" required><br><br>
+
+        <!-- BSN-nummer -->
+        <label for="bsn">BSN-nummer:</label><br>
+        <input type="text" id="bsn" name="bsn" placeholder="Typ je BSN" pattern="\d{9}" title="BSN moet 9 cijfers bevatten" required><br><br>
+
+        <!-- Vakantieland -->
+          <label for="vakantieland">Vakantieland:</label><br>
+        <select id="vakantieland" name="vakantieland" required>
+            <option value="spanje">Spanje</option>
+             <option value="italie">Italië</option>
+              <option value="frankrijk">Frankrijk</option>
+            <option value="duitsland">Duitsland</option>
+        </select><br><br>
+
+        <!-- Datum van vertrek -->
+               <label for="departure_date">Datum van vertrek:</label><br>
+        <input type="date" id="departure_date" name="departure_date" min="<?php echo date('Y-m-d'); ?>" required><br><br>
+
+        <!-- Datum van terugkomst -->
+              <label for="return_date">Datum van terugkomst:</label><br>
+        <input type="date" id="return_date" name="return_date" min="<?php echo date('Y-m-d'); ?>" required><br><br>
+
+        <!-- Aantal reisgenoten -->
+        <label for="reisgenoten">Aantal reisgenoten (max 4):</label><br>
+        <input type="number" id="reisgenoten" name="reisgenoten" min="0" max="4" required><br><br>
+
+        <!-- E-mail -->
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" placeholder="Typ je e-mailadres" required><br><br>
+
+        <!-- Wachtwoord -->
+        <label for="password">Wachtwoord:</label><br>
+        <input type="password" id="password" name="password" placeholder="Typ je wachtwoord" required><br><br>
+
+        <!-- Verzendknop -->
+        <input type="submit" value="Boek nu">
+    </form>
+</body>
+</html>
